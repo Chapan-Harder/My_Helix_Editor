@@ -34,7 +34,7 @@ mode.select = "SELECT باختنا ندرک SCEGLIERE"
 [keys.normal."+"]
 M = ":run-shell-command cd build && cmake .."
 m = ":run-shell-command cd build && make"
-C = ":run-shell-command cd build && ./*.mc"
+C = ":run-shell-command cd build && ./*.cm"
 c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo test"
 r = ":run-shell-command cargo run"
