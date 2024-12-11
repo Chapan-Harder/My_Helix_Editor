@@ -1,6 +1,7 @@
 theme = "base16_transparent"
 
 [editor]
+shell = ["zsh", "-cu"]
 line-number = "relative"
 mouse = false
 bufferline = "multiple"
@@ -16,6 +17,10 @@ C-w = ":buffer-close"
 y = [":clipboard-yank", "yank"]
 C-v = [":clipboard-paste-before"]
 esc = ["collapse_selection", "keep_primary_selection"]
+C-right = "jump_view_right"
+C-left = "jump_view_left"
+C-up = "jump_view_up"
+C-down = "jump_view_down"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -38,3 +43,6 @@ C = ":run-shell-command cd build && ./*.cm"
 c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo test"
 r = ":run-shell-command cargo run"
+
+[editor.lsp]
+display-inlay-hints = true
