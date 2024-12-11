@@ -1,4 +1,4 @@
-theme = "base16_transparent"
+theme = "dark_high_contrast"
 
 [editor]
 shell = ["zsh", "-cu"]
