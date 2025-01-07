@@ -7,9 +7,10 @@ use-grammars = { except = [ "hare", "wren", "gemini" ] }
 clangd = { command = "clangd" }
 deno = { command = "deno", args = [ "lsp" ]}
 emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
-vlang-language-server = { command = "/home/mohsenh/.config/v-analyzer/bin/v-analyzer" }
+vlang-language-server = { command = "/home/mohsenheidari/.config/v-analyzer/bin/v-analyzer" }
 tailwindcss-ls = { command = "tailwindcss-language-server", args = ["--stdio"] }
 vscode-css-language-server = { command = "vscode-css-language-server", args = ["--stdio"], config = { provideFormatter = true, css = { validate = { enable = true } } } }
+zls = { command = "zls" }
 
 [language-server.rust-analyzer]
 command = "rust-analyzer"
@@ -242,3 +243,20 @@ language-servers = [ "svelteserver" ]
 [[grammar]]
 name = "svelte"
 source = { git = "https://github.com/Himujjal/tree-sitter-svelte", rev = "be7f2e7db1fc19f0852265ec60923fc058380739" }
+
+[[language]]
+name = "zig"
+scope = "source.zig"
+injection-regex = "zig"
+file-types = ["zig", "zon"]
+roots = ["build.zig"]
+auto-format = true
+comment-tokens = ["//", "///", "//!"]
+language-servers = [ "zls" ]
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "zig" , args = ["fmt", "--stdin"] }
+
+[[grammar]]
+name = "zig"
+source = { git = "https://github.com/maxxnino/tree-sitter-zig", rev = "0d08703e4c3f426ec61695d7617415fff97029bd" }
+
