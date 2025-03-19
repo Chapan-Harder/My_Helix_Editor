@@ -15,6 +15,40 @@ zls = { command = "zls" }
 [language-server.rust-analyzer]
 command = "rust-analyzer"
 
+[language-server.svelteserver]
+command = "svelteserver"
+args = ["--stdio"]
+
+[language-server.svelteserver.config.configuration.typescript]
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.parameterNames.enabled = "all"
+
+[language-server.svelteserver.config.configuration.javascript]
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes.enabled = true
+inlayHints.enumMemberValues.enabled = true
+inlayHints.parameterNames.enabled = "all"
+
+[[language]]
+name = "svelte"
+scope = "source.svelte"
+injection-regex = "svelte"
+file-types = ["svelte"]
+indent = { tab-width = 2, unit = "  " }
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "svelteserver" ]
+
+[[grammar]]
+name = "svelte"
+source = { git = "https://github.com/Himujjal/tree-sitter-svelte", rev = "be7f2e7db1fc19f0852265ec60923fc058380739" }
+
 [language-server.rust-analyzer.config]
 inlayHints.bindingModeHints.enable = false
 inlayHints.closingBraceHints.minLines = 10
@@ -211,38 +245,6 @@ indent = { tab-width = 2, unit = "  " }
 [[grammar]]
 name = "cpp"
 source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "670404d7c689be1c868a46f919ba2a3912f2b7ef" }
-
-[language-server.svelteserver]
-command = "svelteserver"
-args = ["--stdio"]
-
-[language-server.svelteserver.config.configuration.typescript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-[language-server.svelteserver.config.configuration.javascript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-[[language]]
-name = "svelte"
-scope = "source.svelte"
-injection-regex = "svelte"
-file-types = ["svelte"]
-indent = { tab-width = 2, unit = "  " }
-language-servers = [ "svelteserver" ]
-
-[[grammar]]
-name = "svelte"
-source = { git = "https://github.com/Himujjal/tree-sitter-svelte", rev = "be7f2e7db1fc19f0852265ec60923fc058380739" }
 
 [[language]]
 name = "zig"
