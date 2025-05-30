@@ -11,6 +11,7 @@ vlang-language-server = { command = "/home/mohsenheidari/.config/v-analyzer/bin/
 tailwindcss-ls = { command = "tailwindcss-language-server", args = ["--stdio"] }
 vscode-css-language-server = { command = "vscode-css-language-server", args = ["--stdio"], config = { provideFormatter = true, css = { validate = { enable = true } } } }
 zls = { command = "zls" }
+serve-d = { command = "serve-d" }
 
 [language-server.rust-analyzer]
 command = "rust-analyzer"
@@ -36,11 +37,27 @@ inlayHints.enumMemberValues.enabled = true
 inlayHints.parameterNames.enabled = "all"
 
 [[language]]
+name = "d"
+scope = "source.d"
+file-types = [ "d", "dd" ]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+injection-regex = "d"
+indent = { tab-width = 4, unit = "    "}
+language-servers = [ "serve-d" ]
+formatter = { command = "dfmt" }
+
+[[grammar]]
+name = "d"
+source = { git = "https://github.com/gdamore/tree-sitter-d", rev = "5566f8ce8fc24186fad06170bbb3c8d97c935d74" }
+
+[[language]]
 name = "svelte"
 scope = "source.svelte"
 injection-regex = "svelte"
 file-types = ["svelte"]
 indent = { tab-width = 2, unit = "  " }
+auto-format = true
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
 language-servers = [ "svelteserver" ]
