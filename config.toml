@@ -32,9 +32,9 @@ left = ["mode", "spinner"]
 center = ["file-name"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
 separator = "|"
-mode.normal = "NORMAL یلومعم NORMALE"
-mode.insert = "INSERT ندرک جرد INSERIRE"
-mode.select = "SELECT باختنا ندرک SCEGLIERE"
+mode.normal = "NORMAL یلومعم 普通"
+mode.insert = "INSERT ندرک جرد 入れる"
+mode.select = "SELECT باختنا ندرک 選択する"
 
 [keys.normal."+"]
 M = ":run-shell-command cd build && cmake .."
