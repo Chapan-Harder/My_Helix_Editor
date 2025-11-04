@@ -10,6 +10,7 @@ vscode-css-language-server = { command = "vscode-css-language-server", args = ["
 solargraph = { command = "solargraph", args = ["stdio"] }
 zls = { command = "zls" }
 svlangserver = { command = "svlangserver", args = [] }
+glsl_analyzer = { command = "glsl_analyzer" }
 
 [language-server.svelteserver]
 command = "svelteserver"
@@ -286,3 +287,16 @@ language-servers = ["verible-verilog-ls"]
 name = "systemverilog"
 source = { git = "https://github.com/gmlarumbe/tree-sitter-systemverilog", rev = "3bd2c5d2f60ed7b07c2177b34e2976ad9a87c659" }
 
+[[language]]
+name = "glsl"
+scope = "source.glsl"
+file-types = ["glsl", "vert", "tesc", "tese", "geom", "frag", "comp", "vs", "fs" ]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "glsl_analyzer" ]
+injection-regex = "glsl"
+
+[[grammar]]
+name = "glsl"
+source = { git = "https://github.com/theHamsta/tree-sitter-glsl", rev = "88408ffc5e27abcffced7010fc77396ae3636d7e" }

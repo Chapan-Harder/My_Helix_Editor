@@ -40,9 +40,10 @@ mode.select = "SELECT باختنا ندرک 選択する"
 M = ":run-shell-command cd build && cmake .."
 m = ":run-shell-command cd build && make"
 C = ":run-shell-command cd build && ./*.cm"
-c = ":run-shell-command cargo build"
-t = ":run-shell-command cargo test"
-r = ":run-shell-command cargo run"
+G = ":run-shell-command g++ ./*.cpp && ./a.out"
+g = ":run-shell-command g++ ./main.cpp && ./a.out"
+Z = ":run-shell-command zig build linux or zig build run"
+z = ":run-shell-command zig run ./main.zig"
 
 [editor.lsp]
 display-inlay-hints = true
